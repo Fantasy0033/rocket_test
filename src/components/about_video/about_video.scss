@@ -1,0 +1,14 @@
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 100px;
+    &_title {
+        color: white;
+        font-size: 64px;
+        font-weight: bold;
+        margin-bottom: 32px;
+    }
+}

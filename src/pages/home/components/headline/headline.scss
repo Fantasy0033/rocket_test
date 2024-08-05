@@ -1,0 +1,19 @@
+.headline {
+   padding: 32px;
+
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-radius: 10px;
+
+   box-sizing: border-box;
+
+   display: flex;
+   flex-direction: column;
+
+   flex: 1;
+   width: 100%;
+
+   height: 648px;
+
+   background-image: url("../../../../assets/rocket.jpg");
+   background-size: cover 100%;
+}

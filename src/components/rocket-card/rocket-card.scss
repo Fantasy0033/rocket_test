@@ -1,0 +1,39 @@
+.rocket-card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+
+/*     padding: 24px; */
+
+    text-transform: uppercase;
+}
+
+.rocket-image {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    
+/*     width: 100%; */
+    height: 219px;
+
+    margin: 0 auto;
+}
+
+.rocket-title {
+    font-size: 24px;
+
+}
+
+p {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 8px;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+/* .rocket-img {
+    width: 379px;
+    height: 219px;
+    
+    object-fit: cover;
+} */
