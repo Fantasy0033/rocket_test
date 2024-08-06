@@ -1,0 +1,100 @@
+.team-embla {
+    user-select: none;
+ 
+    max-width: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: end;
+
+    &__descr {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items:baseline;
+      width: 427px;
+      color: white;
+    }
+
+    &__title {
+ 
+      display: flex;
+      justify-content: center;
+      font-size: 64px;
+      font-weight: bold;
+      text-transform: uppercase;
+   
+      margin: 100px 0 32px;
+    }
+    &__subtitle {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    &__viewport {
+      overflow: hidden;
+    }
+ }
+ 
+ .team-embla__container {
+    backface-visibility: hidden;
+ 
+    display: flex;
+    gap: 10px;
+ 
+    touch-action: pan-y pinch-zoom;
+ 
+    &:last-child {
+       padding-right: 10px;
+    }
+ }
+ 
+ .team-embla__slide {
+    flex: 0 0 50%;
+ 
+    box-sizing: border-box;
+ 
+    color: white;
+ 
+    &:nth-child(1) {
+       padding-left: 0;
+    }
+ 
+    &:last-child {
+       margin-right: 10px;
+    }
+ }
+ 
+ .team-embla__footer {
+    display: flex;
+/*     justify-content: space-between;
+    align-content: center; */
+ 
+    margin-top: 42px;
+ }
+ 
+ .team-embla__button {
+    background: none;
+ 
+    border: none;
+    padding: 0;
+ 
+    cursor: pointer;
+ 
+/*     display: flex;
+    align-items: center;
+    justify-content: center; */
+ }
+
+ .team-embla__buttons {
+    display: flex;
+
+ }
+
+ .team-embla_wrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   gap: 250px;
+ }
+ 

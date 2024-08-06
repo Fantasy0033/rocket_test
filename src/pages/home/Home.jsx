@@ -1,4 +1,5 @@
 import { Carousel } from "../../components/carousel";
+import { TeamCarousel } from "../../components/team-carousel";
 import About from "./components/about/about";
 import Headline from "./components/headline/headline";
 import InfoLine from "./components/infoline/infoline";
@@ -113,6 +114,7 @@ export default function Home() {
       <Carousel slides={slides} />
       <InfoLine />
       <About />
+      <TeamCarousel slides={slides} />
     </div>
   );
 }

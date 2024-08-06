@@ -4,11 +4,19 @@
     align-items: center;
     justify-content: center;
 
+    width: 100%;
+
     margin-top: 100px;
     &_title {
         color: white;
         font-size: 64px;
         font-weight: bold;
         margin-bottom: 32px;
+    }
+    &_video {
+        width: 100%;
+    }
+    &_video-img {
+        width: 100%;
     }
 }
