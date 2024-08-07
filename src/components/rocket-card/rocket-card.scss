@@ -2,6 +2,10 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 40px;
 
+    width: 427px;
+
+    padding: 24px;
+
     text-transform: uppercase;
 
 }
@@ -11,7 +15,8 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     
-/*     width: 100%; */
+    display: flex;
+    justify-content: center;
     height: 219px;
 
     margin: 0 auto;
@@ -32,9 +37,9 @@ p {
     font-size: 14px;
     font-weight: 400;
 }
-/* .rocket-img {
+.rocket-img {
     width: 379px;
     height: 219px;
     
     object-fit: cover;
-} */
+}

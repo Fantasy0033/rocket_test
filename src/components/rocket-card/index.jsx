@@ -6,7 +6,7 @@ export default function RocketCard({ info, title }) {
   return (
     <section className="rocket-card">
       <div className="rocket-image">
-        {/*         <img className="rocket-img" src={Rocket} alt="rocket" /> */}
+        <img className="rocket-img" src={Rocket} alt="rocket" />
       </div>
 
       <h1 className="rocket-title">Rocket 1</h1>
