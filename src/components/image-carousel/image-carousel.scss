@@ -27,7 +27,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      min-height: 834px; // Установите минимальную высоту для слайдов
+      min-height: 834px; 
     }
   
     .overlay-content {
@@ -41,6 +41,7 @@
       align-items: center;
 /*       justify-content: center; */
       z-index: 1;
+      margin: 160px 80px;
     }
   
     &__controls {
@@ -59,11 +60,13 @@
       border: none;
       cursor: pointer;
       z-index: 2;
+      margin-right: 80px;
+      margin-left: 80px;
     }
   
     &__dots {
       position: absolute;
-      bottom: 20px;
+/*       bottom: 20px; */
       left: 50%;
       transform: translateX(-50%);
       display: flex;
