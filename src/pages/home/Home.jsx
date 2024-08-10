@@ -4,10 +4,12 @@ import { TeamCarousel } from "../../components/team-carousel";
 import About from "./components/about/about";
 import Headline from "./components/headline/headline";
 import InfoLine from "./components/infoline/infoline";
+import useRocketService from "../../services/RocketService";
 import "./Home.scss";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const slides = [
+  /*   const slidess = [
     {
       title: "Rocket 1",
       height: "8.1 M / 26.7 FT",
@@ -107,7 +109,21 @@ export default function Home() {
       launchMass: "6,000 KG / 13,228 LB",
       returnMass: "3,000 KG / 6,614 LB",
     },
-  ];
+  ]; */
+
+  const [slides, setSlides] = useState([]);
+
+  const { getAllRocket } = useRocketService();
+
+  useEffect(() => {
+    onRequest();
+  }, []);
+
+  const onRequest = () => {
+    getAllRocket().then((res) => {
+      setSlides(res);
+    });
+  };
 
   return (
     <div className="main-home">

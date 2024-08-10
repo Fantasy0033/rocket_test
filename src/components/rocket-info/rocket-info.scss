@@ -1,0 +1,52 @@
+.rocket-info {
+    width: 100%;
+    height: 505px;
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+
+    margin-top: 32px;
+    margin-bottom: 100px;
+
+    &_name {
+        color: white;
+    }
+
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        margin: 27px;
+    }
+    &_descr {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        color: white;
+        width: 100%;
+        padding: 20px;
+    }
+    &_title {
+        color: rgb(255, 255, 255);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        text-transform: uppercase;
+    }
+    p {
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        text-transform: uppercase;
+    }
+    &_image {
+        width: 84%;
+        height: 458px;
+    }
+    &_img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+}

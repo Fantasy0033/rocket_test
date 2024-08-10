@@ -1,14 +1,11 @@
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect, useState } from "react";
-
+import { useEffect, useState, memo } from "react";
 import "./image-carousel.scss";
-import Rocket from "../../assets/rocket_background.svg";
 import left from "../../assets/left.svg";
 import right from "../../assets/right.svg";
 
-export const ImageCarousel = (props) => {
-  const { slides, options } = props;
+export const ImageCarousel = memo(({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ ...options, loop: true }, [
     Autoplay(),
   ]);
@@ -35,24 +32,15 @@ export const ImageCarousel = (props) => {
                 index === selectedIndex ? "selected" : ""
               }`}
               key={index}
-              /*               style={{ backgroundImage: `url(${Rocket})` }} */
+              style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <img
-                src={Rocket}
-                alt=""
-                className="image-carousel_embla-background"
-              />
               <div className="overlay-content">
                 <div className="image-carousel_embla__descr">
                   <div className="image-carousel_embla__descr-title">
                     STARSHIP CAPABILITIES
                   </div>
                   <div className="image-carousel_embla__descr-subtitle">
-                    As the most powerful launch system ever developed, Starship
-                    will be able to carry up to 100 people on long-duration,
-                    interplanetary flights. Starship will also help enable
-                    satellite delivery, the development of a Moon base, and
-                    point-to-point transport here on Earth.
+                    {slide.description}
                   </div>
                 </div>
               </div>
@@ -89,4 +77,6 @@ export const ImageCarousel = (props) => {
       </div>
     </section>
   );
-};
+});
+
+export default ImageCarousel;

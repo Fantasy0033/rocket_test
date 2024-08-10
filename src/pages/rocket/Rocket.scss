@@ -1,0 +1,16 @@
+.rocket {
+    width: 100%;
+    &-name {
+        color: rgb(255, 255, 255);
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 76px;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        margin-top: 64px;
+    }
+}

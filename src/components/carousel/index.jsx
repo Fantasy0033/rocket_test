@@ -1,5 +1,6 @@
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import "./carousel.scss";
@@ -37,7 +38,7 @@ export const Carousel = (props) => {
               }`}
               key={index}
             >
-              <RocketCard info={slide} title={slide.title} />
+              <RocketCard info={slide} index={index} />
             </div>
           ))}
         </div>

@@ -5,28 +5,45 @@ const useRocketService = () => {
 
     const _apiBase = 'https://api.spacexdata.com/v4/dragons';
 
-    const getAllRocket = async (page = _page) => {
-        const res = await request(`${_apiBase}character?page=${page}&limit=4`);
-        const dataArray = Object.values(res.characters);
-        return dataArray.map(_transformCharacter);
+    const getAllRocket = async () => {
+        const res = await request(`${_apiBase}`);
+        return res.flatMap(_transformCharacters); 
+    };
+
+    const getRocket = async () => {
+        const res = await request(`${_apiBase}`);
+        return _transformCharacter(res[0]); 
     }
+
+    const _transformCharacters = (char) => {
+        return char.flickr_images.map((image) => ({
+            name: char.name,
+            height: `${char.height_w_trunk.meters} M / ${char.height_w_trunk.feet} FT`,
+            diameter: `${char.diameter.meters} M / ${char.diameter.feet} FT`,
+            spacecraft: `${char.pressurized_capsule.payload_volume.cubic_meters} M³ / ${char.pressurized_capsule.payload_volume.cubic_feet} FT³`,
+            trunk: `${char.trunk.trunk_volume.cubic_meters} M³ / ${char.trunk.trunk_volume.cubic_feet} FT³`,
+            launchMass: `${char.launch_payload_mass.kg} KG / ${char.launch_payload_mass.lb} LB`,
+            returnMass: `${char.return_payload_mass.kg} KG / ${char.return_payload_mass.lb} LB`,
+            description: char.description,
+            image: image,
+        }));
+    };
 
     const _transformCharacter = (char) => {
         return {
-            id: char.id,
             name: char.name,
-            family: char.family && char.family['lover'] ? char.family['lover'] : 'Unknown',
-            anime: char.debut && char.debut.anime ? char.debut.anime : 'Unknown',
-            affiliation: char.personal & char.personal.affiliation ? char.personal.affiliation : 'Unknown',
-            rank: char.rank && char.rank.ninjaRank && char.rank.ninjaRank['Part II'] ? char.rank.ninjaRank['Part II'] : 'Unknown',
-            image: char.images && char.images.length > 0 ? char.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-lHyO3kuG60PHcbkfkDemnvp6pPkRxmnaYXqc8SOKqg&s',
-            jutsu: char.jutsu && char.jutsu[0] ? char.jutsu[0] : 'Unknown',
-            imageStyle: imageStyle
+            height: `${char.height_w_trunk.meters} M / ${char.height_w_trunk.feet} FT`,
+            diameter: `${char.diameter.meters} M / ${char.diameter.feet} FT`,
+            spacecraft: `${char.pressurized_capsule.payload_volume.cubic_meters} M³ / ${char.pressurized_capsule.payload_volume.cubic_feet} FT³`,
+            trunk: `${char.trunk.trunk_volume.cubic_meters} M³ / ${char.trunk.trunk_volume.cubic_feet} FT³`,
+            launchMass: `${char.launch_payload_mass.kg} KG / ${char.launch_payload_mass.lb} LB`,
+            returnMass: `${char.return_payload_mass.kg} KG / ${char.return_payload_mass.lb} LB`,
+            image: char.flickr_images[0],
         }
     }
 
 
-    return {loading, error,clearError, getAllRocket}
+    return {loading, error,clearError, getAllRocket, getRocket}
 }
 
 export default useRocketService;
